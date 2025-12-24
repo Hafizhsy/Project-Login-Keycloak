@@ -1,0 +1,1284 @@
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* User icon via Iconify */
+.sso-user-icon {
+  font-size: 64px;        /* besar ikon */
+  color: #bb8518;         /* warna emas Pemda vibe */
+}
+
+/* Helpdesk icons via Iconify */
+.helpdesk-icon {
+  font-size: 32px;
+}
+
+/* Eye icon */
+.btn-eye-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-eye-toggle .eye-icon {
+  font-size: 22px;
+  color: #6b7280; /* abu2 netral */
+}
+
+/* Iconify icons di dalam button outline (Google/Apple) */
+.btn-icon {
+  font-size: 22px;
+}
+
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f3f4f6;
+  color: #191919;
+}
+
+/* Layout utama */
+.sso-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.sso-card {
+  background: #ffffff;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  max-width: 1280px;
+  width: 100%;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* LEFT SIDE */
+.sso-side {
+  position: relative;
+  width: 50%;
+  min-height: 600px;
+  background: #000; /* base behind motif */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px 32px;
+  overflow: hidden;
+  gap: 32px;
+}
+
+.sso-side-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sso-motif {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  transform: translate(-10%, -8%);
+}
+
+/* translucent gradient overlay above motif for better contrast */
+.sso-side::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(204, 153, 51, 0.92) 0%,
+      rgba(17, 17, 17, 0.96) 100%
+    );
+  mix-blend-mode: normal;
+  z-index: 0;
+}
+
+.sso-help-text {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sso-help-illustration {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 24px;
+}
+
+.sso-help-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.sso-help-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sso-help-description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 420px;
+}
+
+.sso-carousel-dots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.sso-carousel-dots .dot {
+  width: 14px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.sso-carousel-dots .dot--active {
+  width: 28px;
+  background: #ffffff;
+}
+
+/* Helpdesk bubble */
+.sso-helpdesk-card {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  background: #bb8518;
+  border-radius: 18px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
+}
+
+.sso-helpdesk-title {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sso-helpdesk-icons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.helpdesk-icon {
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+}
+
+/* RIGHT SIDE */
+.sso-main {
+  width: 70%;
+  padding: 40px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sso-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sso-user-icon {
+  width: 75px;
+  height: 97px;
+  object-fit: cover;
+}
+
+.sso-welcome {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.sso-title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* FORM */
+.sso-form-section {
+  width: 100%;
+}
+
+.sso-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.input-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #a1a1aa;
+  font-size: 15px;
+  line-height: 1.4;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-control::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.input-control:focus {
+  border-color: #bb8518;
+  box-shadow: 0 0 0 3px rgba(187, 133, 24, 0.25);
+}
+
+/* Password eye */
+.input-wrapper--password {
+  align-items: center;
+}
+
+.btn-eye-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-eye-toggle img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Forgot password + remember */
+.form-extra-row {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
+.link-forgot-password {
+  color: #191919;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-forgot-password:hover {
+  text-decoration: underline;
+}
+
+.form-remember-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-custom {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid #767676;
+  display: inline-block;
+}
+
+.checkbox-input:checked + .checkbox-custom {
+  background: #bb8518;
+  border-color: #bb8518;
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 2px;
+  border-radius: 1px;
+  background: #ffffff;
+}
+
+.checkbox-text {
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-primary {
+  margin-top: 4px;
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1px solid #a1a1aa;
+  background: #bb8518;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  box-shadow: 0 11px 16px rgba(0, 0, 0, 0.12);
+  transition: background 0.15s ease, transform 0.05s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: #a67312;
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.18);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Quick login */
+.sso-quick-login {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #d4d4d8;
+}
+
+.divider-text {
+  font-weight: 500;
+  color: #191919;
+}
+
+.quick-login-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-outline {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid #a1a1aa;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: background 0.15s ease, box-shadow 0.15s ease,
+    transform 0.05s ease;
+}
+
+.btn-outline:hover {
+  background: #f4f4f5;
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.12);
+}
+
+.btn-outline:active {
+  transform: translateY(1px);
+}
+
+.btn-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Sign up text */
+.signup-text {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.signup-text span {
+  color: #191919;
+  font-weight: 500;
+}
+
+.signup-link {
+  margin-left: 4px;
+  color: #cc9933;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* FORGOT PASSWORD PAGE */
+body.forgot-page {
+  background: #f3f4f6;
+}
+
+.forgot-page .sso-page {
+  padding: 24px;
+}
+
+.forgot-page .sso-card {
+  max-width: 1200px;
+}
+
+.forgot-page .sso-side,
+.forgot-page .sso-main {
+  width: 50%;
+}
+
+.forgot-page .sso-main {
+  padding: 40px 56px;
+  gap: 20px;
+}
+
+.forgot-header .sso-welcome {
+  font-size: 18px;
+  color: #4b5563;
+}
+
+.forgot-header .sso-title {
+  font-size: 28px;
+}
+
+.forgot-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.forgot-description {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.auth-form .form-group {
+  margin-bottom: 16px;
+}
+
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.auth-form .input-wrapper .input-control {
+  padding-left: 40px;
+}
+
+.forgot-reminders {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.forgot-reminders li + li {
+  margin-top: 4px;
+}
+
+.back-to-login {
+  margin-top: 8px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #111827;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.forgot-footer {
+  margin-top: auto;
+  font-size: 12px;
+  color: #9ca3af;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.info-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 14px 16px;
+  text-align: left;
+  backdrop-filter: blur(8px);
+}
+
+.info-card h3 {
+  margin: 6px 0 6px;
+  font-size: 14px;
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.info-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(249, 250, 251, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-tag {
+  display: inline-flex;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(249, 250, 251, 0.12);
+  font-size: 11px;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #ecfdf3;
+  color: #166534;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.forgot-helpdesk-card {
+  margin-top: 32px;
+  width: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .sso-card {
+    flex-direction: column;
+  }
+
+  .sso-side {
+    width: 100%;
+    min-height: 260px;
+    padding: 24px 24px 20px;
+  }
+
+  .sso-main {
+    width: 100%;
+    padding: 24px 20px 28px;
+  }
+
+  .sso-help-illustration {
+    width: 220px;
+  }
+
+  .quick-login-buttons {
+    flex-direction: column;
+  }
+
+  .forgot-page .sso-card {
+    flex-direction: column;
+  }
+
+  .forgot-page .sso-side,
+  .forgot-page .sso-main {
+    width: 100%;
+  }
+
+  .forgot-page .sso-side {
+    min-height: 320px;
+    padding: 24px 24px 28px;
+  }
+
+  .forgot-page .sso-main {
+    padding: 24px 20px 32px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sso-page {
+    padding: 12px;
+  }
+
+  .sso-title {
+    font-size: 24px;
+  }
+
+  .sso-welcome {
+    font-size: 18px;
+  }
+
+  .btn-primary {
+    font-size: 15px;
+  }
+}
+
+/* Error state */
+.input-control.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.3);
+}
+
+.error-message {
+  display: none;
+  font-size: 12px;
+  color: #b91c1c;
+  margin-top: 4px;
+}
+
+.error-message.show {
+  display: block;
+}
+
+/* Carousel basic styling */
+.carousel-container {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-slide {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  inset: 0;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  outline: none;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.slide-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.bantuan-icon {
+  width: 140px;
+  max-width: 70%;
+  height: auto;
+  margin: 0 auto 14px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+}
+
+.carousel-slide:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 6px;
+}
+
+/* Indicators */
+.carousel-indicators {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-indicators .indicator {
+  width: 14px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.carousel-indicators .indicator.active {
+  width: 28px;
+  background: #ffffff;
+}
+/* Social Login Styling */
+.social-login {
+  margin-top: 1.5rem;
+}
+
+.social-divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.social-divider::before { 
+  left: 0; 
+}
+
+.social-divider::after { 
+  right: 0; 
+}
+
+.social-divider span {
+  background: white;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  margin-bottom: 0.75rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  color: #374151;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-social:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.btn-social:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Styling khusus untuk masing-masing provider */
+.btn-social#social-google:hover {
+  border-color: #4285F4;
+  background: #f8f9ff;
+}
+
+.btn-social#social-facebook:hover {
+  border-color: #1877F2;
+  background: #f0f5ff;
+}
+
+.btn-social#social-github:hover {
+  border-color: #181717;
+  background: #f6f6f6;
+}
+
+/* Alternative Login Section */
+.alternative-login {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.divider-with-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider-text {
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* QR Login Button */
+.btn-qr-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px dashed #bb8518;
+  border-radius: 12px;
+  background: #fff8f0;
+  color: #bb8518;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-qr-login:hover {
+  background: #bb8518;
+  color: white;
+  border-style: solid;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(187, 133, 24, 0.3);
+}
+
+.btn-qr-login iconify-icon {
+  font-size: 22px;
+}
+
+/* QR Code Page Styles */
+.qr-page .sso-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.qr-code-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 20px 0;
+}
+
+.qr-code-container {
+  width: 100%;
+  max-width: 350px;
+}
+
+.qr-code-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.qr-code-box {
+  background: white;
+  border: 3px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.qr-code-box:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+
+#qrcode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+#qrcode img {
+  border-radius: 12px;
+  display: block !important;
+}
+
+/* QR Countdown */
+.qr-countdown {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: linear-gradient(135deg, #bb8518 0%, #a67312 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(187, 133, 24, 0.4);
+  z-index: 10;
+}
+
+.qr-countdown iconify-icon {
+  font-size: 18px;
+}
+
+/* QR Status */
+.qr-status {
+  margin-top: 12px;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-icon {
+  font-size: 56px;
+  margin-bottom: 6px;
+}
+
+.status-content.scanning .status-icon {
+  color: #bb8518;
+}
+
+.status-content.success .status-icon {
+  color: #10b981;
+}
+
+.status-content.error .status-icon {
+  color: #ef4444;
+}
+
+.status-content.expired .status-icon {
+  color: #f59e0b;
+}
+
+.status-content h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.status-content p {
+  margin: 0;
+  font-size: 15px;
+  color: #666;
+  max-width: 280px;
+}
+
+/* Rotating Animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotating {
+  animation: rotate 2s linear infinite;
+}
+
+/* QR Instructions */
+.qr-instructions {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-radius: 18px;
+  padding: 24px 28px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #e5e7eb;
+}
+
+.qr-instructions h3 {
+  margin: 0 0 20px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.qr-instructions ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.qr-instructions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.qr-instructions iconify-icon {
+  font-size: 24px;
+  color: #bb8518;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.qr-instructions strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* QR Actions */
+.qr-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Refresh Button */
+.btn-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #bb8518 0%, #a67312 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(187, 133, 24, 0.3);
+  width: 100%;
+}
+
+.btn-refresh:hover {
+  background: linear-gradient(135deg, #a67312 0%, #8f5f0f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(187, 133, 24, 0.4);
+}
+
+.btn-refresh:active {
+  transform: translateY(0);
+}
+
+.btn-refresh iconify-icon {
+  font-size: 20px;
+}
+
+/* Back to Login Button */
+.btn-back-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: #4b5563;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-back-login:hover {
+  background: #f9fafb;
+  color: #bb8518;
+  border-color: #bb8518;
+}
+
+.btn-back-login iconify-icon {
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .qr-code-box {
+    padding: 24px;
+  }
+  
+  #qrcode img {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  
+  .qr-instructions {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .qr-code-box {
+    padding: 20px;
+  }
+  
+  #qrcode img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .status-icon {
+    font-size: 48px;
+  }
+  
+  .status-content h3 {
+    font-size: 18px;
+  }
+  
+  .qr-instructions {
+    padding: 20px 24px;
+  }
+}
+
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
