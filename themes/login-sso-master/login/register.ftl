@@ -148,10 +148,6 @@
                     ${kcSanitize(messagesPerField.get('username'))?no_esc}
                   </span>
                 <#else>
-                  <span class="help-text">
-                    <iconify-icon icon="mdi:information"></iconify-icon>
-                    Username harus unik dan akan digunakan untuk login
-                  </span>
                 </#if>
               </div>
             </#if>
@@ -183,7 +179,6 @@
                 <div class="strength-bar">
                   <div class="strength-fill" id="strength-fill"></div>
                 </div>
-                <span class="strength-text" id="strength-text">Password strength</span>
               </div>
             </div>
 
@@ -209,19 +204,7 @@
                 </span>
               </#if>
             </div>
-
-            <!-- TERMS & CONDITIONS -->
-            <div class="form-group checkbox-group">
-              <label class="checkbox-label">
-                <input type="checkbox" name="termsAccepted" class="checkbox-input" required />
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text">
-                  Saya setuju dengan <a href="#" class="link-inline">Syarat & Ketentuan</a> dan 
-                  <a href="#" class="link-inline">Kebijakan Privasi</a> SSO Pemda DIY
-                </span>
-              </label>
-            </div>
-
+            
             <!-- SUBMIT BUTTON -->
             <button type="submit" class="btn-primary btn-register">
               <iconify-icon icon="mdi:account-plus"></iconify-icon>

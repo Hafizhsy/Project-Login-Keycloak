@@ -70,7 +70,8 @@ body {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  max-width: 1280px;
+  align-items: stretch;
+  max-width: 1440px;
   width: 100%;
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.15);
 }
@@ -79,16 +80,15 @@ body {
 .sso-side {
   position: relative;
   width: 50%;
-  min-height: 600px;
+  min-height: auto;
   background: #000; /* base behind motif */
   color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 40px 32px;
+  padding: 32px 40px;
   overflow: hidden;
-  gap: 32px;
 }
 
 .sso-side-bg {
@@ -183,7 +183,7 @@ body {
   align-self: flex-start;
   background: #bb8518;
   border-radius: 18px;
-  padding: 16px 20px;
+  padding: 32px 20px;
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -207,11 +207,12 @@ body {
 
 /* RIGHT SIDE */
 .sso-main {
-  width: 70%;
-  padding: 40px 64px;
+  width: 50%;
+  padding: 40px 82px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  justify-content: center;
 }
 
 .sso-header {
@@ -252,6 +253,12 @@ body {
   gap: 18px;
 }
 
+.form-row{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -270,7 +277,7 @@ body {
 
 .input-control {
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 35px;
   border-radius: 12px;
   border: 1px solid #a1a1aa;
   font-size: 15px;
@@ -1231,6 +1238,166 @@ body.forgot-page {
   font-size: 18px;
 }
 
+/* Toggle Container */
+.login-method-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 28px;
+}
+
+/* Toggle Button Cards */
+.method-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Icon Container */
+.method-btn iconify-icon {
+  font-size: 32px;
+  transition: all 0.3s ease;
+}
+
+/* Hover State */
+.method-btn:hover {
+  border-color: #d1d5db;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.method-btn:hover iconify-icon {
+  transform: scale(1.1);
+}
+
+/* Active State */
+.method-btn.active {
+  background: linear-gradient(135deg, #bb8518 0%, #d4a133 100%);
+  color: white;
+  border-color: #bb8518;
+  box-shadow: 0 8px 24px rgba(187, 133, 24, 0.35);
+  transform: translateY(-3px);
+}
+
+.method-btn.active iconify-icon {
+  color: white;
+  animation: iconPulse 0.6s ease;
+}
+
+/* Active Badge (Checkmark) */
+.method-btn.active::before {
+  content: '✓';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  animation: checkmark 0.4s ease;
+}
+
+/* Ripple Effect on Active */
+.method-btn.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  animation: ripple 0.6s ease-out;
+}
+
+/* Label Text */
+.method-btn span {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Focus State */
+.method-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(187, 133, 24, 0.2);
+}
+
+/* Animations */
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Responsive untuk Toggle */
+@media (max-width: 640px) {
+  .login-method-toggle {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .method-btn {
+    padding: 14px 16px;
+    gap: 6px;
+  }
+
+  .method-btn iconify-icon {
+    font-size: 28px;
+  }
+
+  .method-btn span {
+    font-size: 12px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 960px) {
   .qr-code-box {
@@ -1281,4 +1448,23 @@ body.forgot-page {
   100% {
     transform: translateY(0);
   }
+}
+
+#kc-container,
+#kc-container-wrapper,
+#kc-content,
+#kc-content-wrapper,
+.login-pf-page,
+.login-pf {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.sso-page {
+  width: 100%;
+  max-width: none;
+}
+
+.sso-card {
+  min-height: 720px;
 }
