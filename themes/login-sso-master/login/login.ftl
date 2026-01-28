@@ -33,7 +33,7 @@
               <img src="${url.resourcesPath}/image/pembaruan-2FA.png" alt="Pembaruan 2FA" class="bantuan-icon">
               <h2 class="sso-help-title">Pembaruan 2FA</h2>
               <p class="sso-help-description">
-                Pastikan Anda mengupdate 2FA setiap kali login untuk meningkatkan keamanan akun Anda.
+                Pastikan Anda mengupdate 2FA setiap kali login untuk meningkatkan keamanan akun Anda. Jangan pernah membagikan username dan password SSO Anda kepada orang lain. Selalu pastikan Anda login di domain resmi Pemda DIY.
               </p>
             </div>
 
@@ -63,18 +63,6 @@
           <p class="sso-welcome">Selamat Datang kembali di</p>
           <h1 class="sso-title">SSO Pemda DIY</h1>
         </header>
-
-        <!-- Login Method Toggle -->
-        <div class="login-method-toggle">
-          <button class="method-btn active" id="btn-password">
-            <iconify-icon icon="mdi:form-textbox-password"></iconify-icon>
-            <span>Password</span>
-          </button>
-          <button class="method-btn" id="btn-qr">
-            <iconify-icon icon="mdi:qrcode-scan"></iconify-icon>
-            <span>QR Code</span>
-          </button>
-        </div>
 
         <!-- PASSWORD LOGIN SECTION -->
         <section class="sso-form-section" id="password-section">
@@ -162,68 +150,6 @@
             </div>
             </div>
           </#if>
-        </section>
-
-        <!-- QR CODE LOGIN SECTION -->
-        <section class="qr-code-section" id="qr-section" style="display: none;">
-          <div class="qr-code-container">
-            <div class="qr-code-box" id="qr-box">
-              <div id="qrcode"></div>
-              
-              <div class="qr-countdown" id="countdown">
-                <iconify-icon icon="mdi:clock-outline"></iconify-icon>
-                <span id="timer">2:00</span>
-              </div>
-            </div>
-
-            <div class="qr-status" id="qr-status">
-              <div class="status-content scanning">
-                <iconify-icon icon="mdi:radar" class="status-icon rotating"></iconify-icon>
-                <h3>Menunggu Scan...</h3>
-                <p>Scan QR code dengan aplikasi SSO Pemda DIY</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="qr-instructions">
-            <h3>Cara Login dengan QR Code</h3>
-            <ol>
-              <li>
-                <iconify-icon icon="mdi:cellphone"></iconify-icon>
-                <span>Buka aplikasi <strong>SSO Pemda DIY</strong> di smartphone</span>
-              </li>
-              <li>
-                <iconify-icon icon="mdi:qrcode-scan"></iconify-icon>
-                <span>Tap icon <strong>Scan QR</strong> di aplikasi</span>
-              </li>
-              <li>
-                <iconify-icon icon="mdi:camera"></iconify-icon>
-                <span>Arahkan kamera ke QR code di layar ini</span>
-              </li>
-              <li>
-                <iconify-icon icon="mdi:fingerprint"></iconify-icon>
-                <span>Konfirmasi dengan <strong>biometric</strong> di HP Anda</span>
-              </li>
-            </ol>
-          </div>
-
-          <button class="btn-refresh" id="btn-refresh" style="display: none;">
-            <iconify-icon icon="mdi:refresh"></iconify-icon>
-            Generate QR Baru
-          </button>
-
-          <!-- Back to Password from QR -->
-          <div class="register-section" style="margin-top: 20px;">
-            <#if realm.registrationAllowed && !registrationDisabled??>
-              <p style="text-align: center; margin: 0 0 12px; font-size: 14px; color: #6b7280;">
-                Belum punya akun?
-              </p>
-              <a href="${url.registrationUrl}" class="btn-register-outline">
-                <iconify-icon icon="mdi:account-plus"></iconify-icon>
-                <span>Daftar Akun Baru</span>
-              </a>
-            </#if>
-          </div>
         </section>
       </main>
     </div>
