@@ -147,11 +147,53 @@
               <a href="${url.registrationUrl}" class="btn-register-link">
                 <span>Register</span>
               </a>
+              <footer class="sso-footer-links">
+            <div class="footer-divider">
+              <span class="divider-line"></span>
+            </div>
+            
+            <div class="footer-grid">
+              <a href="https://wiki.jogjaprov.go.id/diskominfo/panduan/panduan-2fa" class="footer-item">
+                <div class="footer-icon-box security">
+                  <iconify-icon icon="mdi:shield-check-outline"></iconify-icon>
+                </div>
+                <div class="footer-text">
+                  <span class="footer-label">Panduan</span>
+                  <span class="footer-sub">SSO / 2FA</span>
+                </div>
+              </a>
+
+              <a href="https://drive.google.com/file/d/1nvLDfcjULstrpKbt-8o3nSY23FgCMxl4/view" class="footer-item">
+                <div class="footer-icon-box privacy">
+                  <iconify-icon icon="mdi:lock-outline"></iconify-icon>
+                </div>
+                <div class="footer-text">
+                  <span class="footer-label">Kebijakan</span>
+                  <span class="footer-sub">Privasi</span>
+                </div>
+              </a>
+
+              <a href="https://diskominfo.notion.site/28e22b0cdb8080e6a777e835aee5cff7" class="footer-item">
+                <div class="footer-icon-box feedback">
+                  <iconify-icon icon="mdi:comment-quote-outline"></iconify-icon>
+                </div>
+                <div class="footer-text">
+                  <span class="footer-label">Bantuan</span>
+                  <span class="footer-sub">Kritik & Saran</span>
+                </div>
+              </a>
+            </div>
+
+            <p class="sso-copyright">
+              &copy; 2026 Pemerintah Daerah DIY
+            </p>
+          </footer>
             </div>
             </div>
           </#if>
         </section>
       </main>
+      
     </div>
   </div>
 </@layout.registrationLayout>
